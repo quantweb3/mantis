@@ -1,4 +1,5 @@
 // material-ui
+import React from 'react';
 import { useMediaQuery, Container, Link, Typography, Stack } from '@mui/material';
 
 // ==============================|| FOOTER - AUTHENTICATION ||============================== //

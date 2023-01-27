@@ -1,4 +1,4 @@
-// material-ui
+import React from 'react';
 import { Typography } from '@mui/material';
 
 // project import
