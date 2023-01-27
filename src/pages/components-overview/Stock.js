@@ -1,20 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
-import { Button, Input } from 'antd';
+import { Button } from 'antd';
 import { Checkbox } from 'antd';
 import { useDispatch } from 'react-redux';
 import { openDrawer } from 'store/reducers/menu';
 import axios from 'axios';
 import * as echarts from 'echarts';
-// import 'antd/dist/antd.css';
 import { Grid } from '@mui/material';
 import './stockEchart.css';
-import DebounceSelect from 'components/AntdRefine/DebounceSelect';
+import SearchInput from 'components/AntdRefine/SearchInput';
 
 const ComponentStock = () => {
     const dispatch = useDispatch();
 
-    const [value, setValue] = useState([]);
+    const [stockCode, setStockCode] = useState();
 
     const frequencyOptions = ['1m', '5m', '15m', '30m', '60m', '120m', 'd', 'w', 'm', 'y'];
 
@@ -41,10 +40,11 @@ const ComponentStock = () => {
 
     const BatchZenChart = async () => {
         dispatch(openDrawer({ drawerOpen: false }));
-
         clearAllCharts();
+        console.log('BatchZenChart', stockCode);
+
         const recipeUrl = 'http://127.0.0.1:3001/stock/kline';
-        let cfgdata = { code: 'SH.000001', frequencys: samplefrequency };
+        let cfgdata = { code: stockCode, frequencys: samplefrequency };
         const response = await axios.post(recipeUrl, cfgdata);
         let charts = response.data.charts;
         charts.forEach((item, index) => {
@@ -83,54 +83,22 @@ const ComponentStock = () => {
         return frs;
     };
 
-    // const fetchUserList = async (username) => {
-    //     console.log('fetching user', username);
-    //     return fetch('http://127.0.0.1:8000/search_code?market=a&query=282')
-    //         .then((response) => response.json())
-    //         .then((body) => {
-    //             console.log(body);
-
-    //             body.map((user) => {
-    //                 console.log(user.code);
-    //             });
-
-    //             body.map((user) => ({
-    //                 label: `${user.name}`,
-    //                 value: user.code
-    //             }));
-    //         });
-    // };
-
-    async function fetchUserList(username) {
-        console.log('fetching user', username);
-        return fetch('https://randomuser.me/api/?results=5')
-            .then((response) => response.json())
-            .then((body) =>
-                body.results.map((user) => ({
-                    label: `${user.name.first} ${user.name.last}`,
-                    value: user.login.username
-                }))
-            );
-    }
-
     return (
         <Grid container rowSpacing={4.5} columnSpacing={2.75}>
             <Grid item xs={12} sx={{ mb: -2.25 }}>
                 <div style={{ paddingBottom: '6px' }}>
-                    <DebounceSelect
-                        mode="multiple"
-                        value={value}
-                        placeholder="Select users"
-                        fetchOptions={fetchUserList}
+                    <SearchInput
+                        value={stockCode}
+                        placeholder="input search text"
                         onChange={(newValue) => {
-                            setValue(newValue);
+                            setStockCode(newValue);
                         }}
                         style={{
-                            width: '250px'
+                            width: 200,
+                            marginRight: '10px'
                         }}
                     />
 
-                    <Input style={{ marginRight: '10px', width: '200px' }} addonBefore="股票代码" defaultValue="SH.000001" />
                     {renderCheckbox()}
                     <Button type="primary" onClick={() => BatchZenChart()}>
                         Zen
