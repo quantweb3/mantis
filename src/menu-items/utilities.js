@@ -27,9 +27,9 @@ const utilities = {
     children: [
         {
             id: 'util-typography',
-            title: 'Typography',
+            title: 'Stock',
             type: 'item',
-            url: '/typography',
+            url: '/Stock',
             icon: icons.FontSizeOutlined
         },
         {
