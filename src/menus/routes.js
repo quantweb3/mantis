@@ -1,3 +1,5 @@
+import { useRoutes } from 'react-router-dom';
+
 import { lazy } from 'react';
 
 // project import
@@ -98,4 +100,6 @@ const MainRoutes = {
     ]
 };
 
-export { LoginRoutes, MainRoutes };
+export default function ThemeRoutes() {
+    return useRoutes([MainRoutes, LoginRoutes]);
+}

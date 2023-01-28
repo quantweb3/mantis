@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import menuItem from 'menus';
+import menuItem from '../../../../../menus/menus';
 import NavGroup from './NavGroup';
 
 const Navigation = () => {
