@@ -1,11 +1,10 @@
-import React from 'react';
 import { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Outlet } from 'react-router-dom';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
 import { Box, Toolbar, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 // project import
 import Drawer from './Drawer';

@@ -1,14 +1,13 @@
-import React from 'react';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
 import { AppBar, Box, ClickAwayListener, IconButton, Paper, Popper, Toolbar } from '@mui/material';
-
-// project import
+import { useTheme } from '@mui/material/styles';
 import Search from './Search';
-import Profile from './Profile';
+// project import
+
 import Transitions from 'components/@extended/Transitions';
+import Profile from './Profile';
 
 // assets
 import { MoreOutlined } from '@ant-design/icons';

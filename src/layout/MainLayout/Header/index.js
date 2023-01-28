@@ -1,9 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
 import { AppBar, IconButton, Toolbar, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 // project import
 import AppBarStyled from './AppBarStyled';
@@ -25,6 +25,8 @@ const Header = ({ open, handleDrawerToggle }) => {
     const mainHeader = (
         <Toolbar>
             <IconButton
+                size="small"
+                style={{ marginBottom: '20px' }}
                 disableRipple
                 aria-label="open drawer"
                 onClick={handleDrawerToggle}
@@ -44,8 +46,8 @@ const Header = ({ open, handleDrawerToggle }) => {
         color: 'inherit',
         elevation: 0,
         sx: {
-            borderBottom: `1px solid ${theme.palette.divider}`
-            // boxShadow: theme.customShadows.z1
+            borderBottom: `1px solid ${theme.palette.divider}`,
+            height: 44
         }
     };
 

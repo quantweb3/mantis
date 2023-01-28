@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, FormControl } from '@mui/material';
 
 const Search = () => (

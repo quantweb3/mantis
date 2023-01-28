@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
-import { useRef, useState } from 'react';
-import React from 'react';
+import React, { useRef, useState } from 'react';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
 import {
     Avatar,
     Box,
@@ -19,16 +17,17 @@ import {
     Tabs,
     Typography
 } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 // project import
-import MainCard from 'components/MainCard';
 import Transitions from 'components/@extended/Transitions';
+import MainCard from 'components/MainCard';
 import ProfileTab from './ProfileTab';
 import SettingTab from './SettingTab';
 
 // assets
-import avatar1 from 'assets/images/users/github.png';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import avatar1 from 'assets/images/users/github.png';
 
 // tab panel wrapper
 function TabPanel({ children, value, index, ...other }) {
@@ -80,16 +79,15 @@ const Profile = () => {
         setValue(newValue);
     };
 
-    const iconBackColorOpen = 'grey.300';
-
     return (
-        <Box sx={{ flexShrink: 0, ml: 0.75 }}>
+        <Box style={{ height: '16px' }} sx={{ flexShrink: 0, ml: 0.15 }}>
             <ButtonBase
+                style={{ height: '20px' }}
                 sx={{
                     p: 0.25,
-                    bgcolor: open ? iconBackColorOpen : 'transparent',
+                    bgcolor: open ? 'transparent' : 'transparent',
                     borderRadius: 1,
-                    '&:hover': { bgcolor: 'secondary.lighter' }
+                    '&:hover': { bgcolor: 'transparent' }
                 }}
                 aria-label="open profile"
                 ref={anchorRef}
@@ -97,8 +95,8 @@ const Profile = () => {
                 aria-haspopup="true"
                 onClick={handleToggle}
             >
-                <Stack direction="row" spacing={2} alignItems="center" sx={{ p: 0.5 }}>
-                    <Avatar alt="profile user" src={avatar1} sx={{ width: 32, height: 32 }} />
+                <Stack style={{ height: '16px', marginBottom: '28px' }} direction="row" spacing={1} alignItems="center" sx={{ p: 0.5 }}>
+                    <Avatar alt="profile user" src={avatar1} sx={{ width: 16, height: 16 }} />
                     <Typography variant="subtitle1">admin</Typography>
                 </Stack>
             </ButtonBase>

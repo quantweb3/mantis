@@ -1,10 +1,10 @@
-import { Card, DatePicker, Form, Select, Space } from 'antd';
+import { Card, Collapse, DatePicker, Form, Select, Space } from 'antd';
+import locale from 'antd/es/date-picker/locale/zh_CN';
 import SearchInput from 'components/AntdRefine/SearchInput';
+import 'dayjs/locale/zh-cn';
 import React, { useImperativeHandle, useState } from 'react';
 import './stockEchart.css';
-
-import locale from 'antd/es/date-picker/locale/zh_CN';
-import 'dayjs/locale/zh-cn';
+const { Panel } = Collapse;
 
 const { RangePicker } = DatePicker;
 
@@ -35,6 +35,8 @@ const BackTestConfigure = React.forwardRef((props, ref) => {
         console.log(range);
         setDateRange(range);
     }
+
+    const text = 'aaa';
 
     return (
         <Card
@@ -97,6 +99,11 @@ const BackTestConfigure = React.forwardRef((props, ref) => {
                     </Space>
                 </Form.Item>
             </Form>
+            <Collapse ghost style={{ marginTop: '4px' }} accordion>
+                <Panel header="更多配置" key="1">
+                    <p>{text}</p>
+                </Panel>
+            </Collapse>
         </Card>
     );
 });
