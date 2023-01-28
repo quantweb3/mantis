@@ -1,16 +1,13 @@
-import React from 'react';
+import { Grid } from '@mui/material';
+import { Button, Checkbox } from 'antd';
+import axios from 'axios';
+import SearchInput from 'components/AntdRefine/SearchInput';
+import * as echarts from 'echarts';
 import { useState } from 'react';
-import { Button } from 'antd';
-import { Checkbox } from 'antd';
 import { useDispatch } from 'react-redux';
 import { openDrawer } from 'store/reducers/menu';
-import axios from 'axios';
-import * as echarts from 'echarts';
-import { Grid } from '@mui/material';
-import './stockEchart.css';
-import SearchInput from 'components/AntdRefine/SearchInput';
 
-const ComponentStock = () => {
+const ZenConfig = () => {
     const dispatch = useDispatch();
 
     const [stockCode, setStockCode] = useState();
@@ -89,7 +86,7 @@ const ComponentStock = () => {
                 <div style={{ paddingBottom: '6px' }}>
                     <SearchInput
                         value={stockCode}
-                        placeholder="input search text"
+                        placeholder="输入股票代码"
                         onChange={(newValue) => {
                             setStockCode(newValue);
                         }}
@@ -120,4 +117,4 @@ const ComponentStock = () => {
     );
 };
 
-export default ComponentStock;
+export default ZenConfig;

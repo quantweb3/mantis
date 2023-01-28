@@ -47,7 +47,9 @@ module.exports = {
             // make sure to disable the ESLint rule here.
             rules: {
                 'react/react-in-jsx-scope': 'off',
-                'react-in-jsx-scope': 'off',
+                'react/jsx-uses-react': 'off',
+                'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+
                 'no-new-func': 'off',
                 // TypeScript's `noFallthroughCasesInSwitch` option is more robust (#6906)
                 'default-case': 'off',
@@ -102,6 +104,10 @@ module.exports = {
         'dot-location': ['warn', 'property'],
         eqeqeq: [0, 'smart'],
         'new-parens': 'warn',
+
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-uses-react': 'off',
+        'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
         'no-array-constructor': 'warn',
         'no-caller': 'warn',
         'no-cond-assign': ['warn', 'except-parens'],
@@ -245,7 +251,6 @@ module.exports = {
                 ignore: []
             }
         ],
-        'react/jsx-uses-react': 'warn',
         'react/jsx-uses-vars': 'warn',
         'react/no-danger-with-children': 'warn',
         // Disabled because of undesirable warnings
@@ -255,7 +260,6 @@ module.exports = {
         'react/no-direct-mutation-state': 'warn',
         'react/no-is-mounted': 'warn',
         'react/no-typos': 'error',
-        'react/react-in-jsx-scope': 'error',
         'react/require-render-return': 'error',
         'react/style-prop-object': 'warn',
 

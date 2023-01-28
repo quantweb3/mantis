@@ -27,23 +27,23 @@ const utilities = {
     children: [
         {
             id: 'util-typography',
-            title: 'Stock',
+            title: '股票',
             type: 'item',
             url: '/Stock',
             icon: icons.FontSizeOutlined
         },
         {
             id: 'util-color',
-            title: 'Color',
+            title: '期货',
             type: 'item',
-            url: '/color',
+            url: '/feature',
             icon: icons.BgColorsOutlined
         },
         {
             id: 'util-shadow',
-            title: 'Shadow',
+            title: '回测',
             type: 'item',
-            url: '/shadow',
+            url: '/stockBackTest',
             icon: icons.BarcodeOutlined
         },
         {

@@ -48,7 +48,6 @@ const SearchInput = (props) => {
             showArrow={false}
             filterOption={false}
             onSearch={handleSearch}
-            // onChange={handleChange}
             onChange={props.onChange}
             notFoundContent={null}
             options={(data || []).map((d) => ({
