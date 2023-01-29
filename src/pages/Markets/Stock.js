@@ -1,14 +1,12 @@
-import React from 'react';
-import { useState } from 'react';
-import { Button } from 'antd';
-import { Checkbox } from 'antd';
+import { Grid } from '@mui/material';
+import { Button, Checkbox } from 'antd';
+import SearchInput from 'components/AntdRefine/SearchInput';
+import * as echarts from 'echarts';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { openDrawer } from 'store/reducers/menu';
-import axios from 'axios';
-import * as echarts from 'echarts';
-import { Grid } from '@mui/material';
+import AxiosV2 from '../../api/http';
 import './stockEchart.css';
-import SearchInput from 'components/AntdRefine/SearchInput';
 
 const ComponentStock = () => {
     const dispatch = useDispatch();
@@ -45,15 +43,19 @@ const ComponentStock = () => {
 
         const recipeUrl = 'http://127.0.0.1:3001/stock/kline';
         let cfgdata = { code: stockCode, frequencys: samplefrequency };
-        const response = await axios.post(recipeUrl, cfgdata);
-        let charts = response.data.charts;
-        charts.forEach((item, index) => {
-            let klinedata = item.chart;
-            // eslint-disable-next-line
-            var re_obj = new Function('return ' + klinedata)();
-            re_obj.backgroundColor = '#333333';
-            showChart('stock_' + item.frequency, re_obj);
-        });
+        const response = await AxiosV2.post(recipeUrl, cfgdata);
+        console.log('res', response);
+
+        if (response.code === 200) {
+            let charts = response.charts;
+            charts.forEach((item, index) => {
+                let klinedata = item.chart;
+                // eslint-disable-next-line
+                var re_obj = new Function('return ' + klinedata)();
+                re_obj.backgroundColor = '#333333';
+                showChart('stock_' + item.frequency, re_obj);
+            });
+        }
     };
 
     const onChange = (e) => {
