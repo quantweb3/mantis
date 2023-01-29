@@ -40,7 +40,7 @@ const ZenConfig = () => {
         clearAllCharts();
         console.log('BatchZenChart', stockCode);
 
-        const recipeUrl = 'http://127.0.0.1:3001/stock/kline';
+        const recipeUrl = '/stock/kline';
         let cfgdata = { code: stockCode, frequencys: samplefrequency };
         const response = await axios.post(recipeUrl, cfgdata);
         let charts = response.data.charts;

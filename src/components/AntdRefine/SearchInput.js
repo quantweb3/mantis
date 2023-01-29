@@ -1,8 +1,8 @@
+import { python_api_url } from '@cfg/appcfg';
 import { Select } from 'antd';
 import { useState } from 'react';
 let timeout;
 let currentValue;
-
 async function postData(url = '', data = {}) {
     // Default options are marked with *
     const response = await fetch(url, {
@@ -28,7 +28,7 @@ const remoteFetch = (value, callback) => {
     }
     currentValue = value;
     const remoteCall = async () => {
-        postData('http://127.0.0.1:3001/stock/SearchStockCode', { market: 'a', query: value }).then((response) => {
+        postData(`${python_api_url}/stock/SearchStockCode`, { market: 'a', query: value }).then((response) => {
             console.log(response); // JSON data parsed by `data.json()` call
             let stocks = response.stocks;
             console.log(stocks);

@@ -1,11 +1,11 @@
+import AxiosV2 from '@api/http';
 import { Grid } from '@mui/material';
 import { Button, Checkbox } from 'antd';
 import SearchInput from 'components/AntdRefine/SearchInput';
 import * as echarts from 'echarts';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { openDrawer } from 'store/reducers/menu';
-import AxiosV2 from '../../api/http';
 import './stockEchart.css';
 
 const ComponentStock = () => {
@@ -41,7 +41,7 @@ const ComponentStock = () => {
         clearAllCharts();
         console.log('BatchZenChart', stockCode);
 
-        const recipeUrl = 'http://127.0.0.1:3001/stock/kline';
+        const recipeUrl = '/stock/kline';
         let cfgdata = { code: stockCode, frequencys: samplefrequency };
         const response = await AxiosV2.post(recipeUrl, cfgdata);
         console.log('res', response);

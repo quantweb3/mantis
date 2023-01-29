@@ -4,12 +4,15 @@ import { message } from 'antd';
 import axios from 'axios';
 import { createRoot } from 'react-dom/client';
 import './loading.css';
+
+import { python_api_url } from '@cfg/appcfg';
 // 默认域名
 // axios.defaults.baseURL = "http://10.26.4.123:8080/api/";
 // 配置请求头
+console.log('python_api_url', python_api_url);
 
 const AxiosV2 = axios.create({
-    // baseURL: process.env.BASE_URL, // 设置请求的base url
+    baseURL: python_api_url, // 设置请求的base url
     timeout: 20000 // 设置超时时长
 });
 
