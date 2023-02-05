@@ -1,7 +1,7 @@
 // project import
-import React from 'react';
-import Navigation from './Navigation';
+
 import SimpleBar from 'components/third-party/SimpleBar';
+import Navigation from './Navigation';
 
 // ==============================|| DRAWER CONTENT ||============================== //
 

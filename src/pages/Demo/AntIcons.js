@@ -1,9 +1,8 @@
-import React from 'react';
 import { styled } from '@mui/material/styles';
 
 // project import
-import ComponentSkeleton from './ComponentSkeleton';
 import MainCard from 'components/MainCard';
+import ComponentSkeleton from './ComponentSkeleton';
 
 // styles
 const IFrameWrapper = styled('iframe')(() => ({

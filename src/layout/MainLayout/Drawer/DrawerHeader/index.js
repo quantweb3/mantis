@@ -1,13 +1,11 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
 // material-ui
+import { Chip, Stack } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Stack, Chip } from '@mui/material';
 
 // project import
 import DrawerHeaderStyled from './DrawerHeaderStyled';
-import Logo from 'components/Logo';
 
 import { Avatar } from '@mui/material';
 import avatar1 from 'assets/images/users/zen.png';

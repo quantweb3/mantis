@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
-import { useTheme } from '@mui/material/styles';
 import { Grid, Stack, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 // project import
 import MainCard from 'components/MainCard';

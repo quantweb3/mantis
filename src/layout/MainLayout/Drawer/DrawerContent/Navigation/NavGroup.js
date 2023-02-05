@@ -1,7 +1,6 @@
-import React from 'react';
+import { Box, List, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { Box, List, Typography } from '@mui/material';
 import NavItem from './NavItem';
 
 const NavGroup = ({ item }) => {

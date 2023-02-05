@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 
@@ -7,10 +6,10 @@ import { CssBaseline, StyledEngineProvider } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // project import
-import Palette from './palette';
-import Typography from './typography';
-import CustomShadows from './shadows';
 import componentsOverride from './overrides';
+import Palette from './palette';
+import CustomShadows from './shadows';
+import Typography from './typography';
 
 // ==============================|| DEFAULT THEME - MAIN  ||============================== //
 

@@ -10,6 +10,8 @@ import { useTheme } from '@mui/material/styles';
 import Drawer from './Drawer';
 import Header from './Header';
 
+import './fix.css';
+
 // types
 import { openDrawer } from 'store/reducers/menu';
 

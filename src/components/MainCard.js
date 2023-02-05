@@ -1,10 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
 import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 // project import
 import Highlighter from './third-party/Highlighter';

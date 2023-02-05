@@ -1,7 +1,7 @@
 // material-ui
-import React from 'react';
-import { useTheme } from '@mui/material/styles';
+
 import { Box } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 // ==============================|| AUTH BLUR BACK SVG ||============================== //
 
