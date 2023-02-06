@@ -5,6 +5,39 @@
 } 
 
 
+header {
+   
+   height: 40px;
+   max-height: 40px;
+   padding-top: 6px;
+   z-index: 9991;
+
+}
+
+header>div.css-13n62e0-MuiToolbar-root{
+   z-index: 9990;
+   height: 40px;
+   
+   max-height: 40px;
+   min-height: 20px;
+}
+
+ 
+
+#root > div > header > div > button{
+   padding-top : 10px;
+   z-index: 100000;
+   margin-top: 16px;
+}
+
+
+main>div.css-13n62e0-MuiToolbar-root{
+   z-index: 9990;
+   height: 40px;
+   
+   max-height: 40px;
+   min-height: 20px;
+}
 
 
 
